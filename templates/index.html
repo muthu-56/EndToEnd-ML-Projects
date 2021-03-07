@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en" xmlns:min-width="http://www.w3.org/1999/xhtml" xmlns:height="http://www.w3.org/1999/xhtml"
+      xmlns:opacity="http://www.w3.org/1999/xhtml" xmlns:border-style="http://www.w3.org/1999/xhtml"
+      xmlns:font-weight="http://www.w3.org/1999/xhtml" xmlns:font-size="http://www.w3.org/1999/xhtml">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+        <style>
+            html, body {
+                background: #e6e6e6;
+                height: 100%;
+            }
+
+            .global-container {
+                background-color: #080808;
+            }
+            .p-18 {
+                padding: 16px 16px 0px 0px;
+            }
+            h3 {
+                margin-bottom: 1px;
+            }
+        </style>
+
+        <title>IPL winner prediction application</title>
+    </head>
+    <body>
+        <div class="container pb-5">
+            <h1 class="pb-3 text-center">IPL Winner Prediction Application</h1>
+            <div class="row mx-5 mt-5 no-gutters shadow-lg global-container" >
+                <div class="col-md-6 bg-white p-5", style="background-image: url('static/ipl9.png');
+                border-style: outset; border-width: 1.5px 1.5px; border-color: red green blue yellow; ">
+
+                    <div class="form-style">
+                        <form action="{{ url_for('predict')}}" method="post">
+<!--                            <div class="form-group row">-->
+<!--                                <label for="exampleFormControlSelect1" class="col-sm-4 col-form-label"><b>Season</b></label>-->
+<!--                                <div class="col-sm-8">-->
+<!--                                    <select class="form-control" id="exampleFormControlSelect1" name="Season" required="required">-->
+<!--                                        <option value="" selected disabled hidden>Choose here</option>-->
+<!--                                        <option>2008</option>-->
+<!--                                        <option>2009</option>-->
+<!--                                        <option>2010</option>-->
+<!--                                        <option>2011</option>-->
+<!--                                        <option>2012</option>-->
+<!--                                        <option>2013</option>-->
+<!--                                        <option>2014</option>-->
+<!--                                        <option>2015</option>-->
+<!--                                        <option>2016</option>-->
+<!--                                        <option>2017</option>-->
+
+<!--                                    </select>-->
+<!--                                </div>-->
+<!--                            </div>-->
+                            <div class="form-group row">
+                                <label for="exampleFormControlSelect1" class="col-sm-4 col-form-label"><b>City</b></label>
+                                <div class="col-sm-8">
+                                    <select class="form-control" id="exampleFormControlSelect1" name="City" required="required">
+                                        <option value="" selected disabled hidden>Choose here</option>
+                                        <option>Abu Dhabi</option>
+                                        <option>Ahmedabad</option>
+                                        <option>Bangalore</option>
+                                        <option>Bloemfontein</option>
+                                        <option>Cape Town</option>
+                                        <option>Centurion</option>
+                                        <option>Chandigarh</option>
+                                        <option>Chennai</option>
+                                        <option>Cuttack</option>
+                                        <option>Delhi</option>
+                                        <option>Dharamsala</option>
+                                        <option>Durban</option>
+                                        <option>East London</option>
+                                        <option>Hyderabad</option>
+                                        <option>Indore</option>
+                                        <option>Jaipur</option>
+                                        <option>Johannesburg</option>
+                                        <option>Kanpur</option>
+                                        <option>Kimberley</option>
+                                        <option>Kochi</option>
+                                        <option>Kolkata</option>
+                                        <option>Mumbai</option>
+                                        <option>Nagpur</option>
+                                        <option>Port Elizabeth</option>
+                                        <option>Pune</option>
+                                        <option>Raipur</option>
+                                        <option>Rajkot</option>
+                                        <option>Ranchi</option>
+                                        <option>Sharjah</option>
+                                        <option>Visakhapatnam</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="exampleFormControlSelect1" class="col-sm-4 col-form-label"><b>Team1</b></label>
+                                <div class="col-sm-8">
+                                    <select class="form-control" id="exampleFormControlSelect1" name="Team1" required="required">
+                                        <option value="" selected disabled hidden>Choose here</option>
+                                        <option>Mumbai Indians</option>
+                                        <option>Kings XI Punjab</option>
+                                        <option>Chennai Super Kings</option>
+                                        <option>Royal Challengers Bangalore</option>
+                                        <option>Kolkata Knight Riders</option>
+                                        <option>Delhi Daredevils</option>
+                                        <option>Rajasthan Royals</option>
+                                        <option>Sunrisers Hyderabad</option>
+                                        <option>Deccan Chargers</option>
+                                        <option>Pune Warriors</option>
+                                        <option>Gujarat Lions</option>
+                                        <option>Rising Pune Supergiant</option>
+                                        <option>Kochi Tuskers Kerala</option>
+                                        <option>Rising Pune Supergiants</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="exampleFormControlSelect1" class="col-sm-4 col-form-label"><b>Team2</b></label>
+                                <div class="col-sm-8">
+                                    <select class="form-control" id="exampleFormControlSelect1" name="Team2" required="required">
+                                        <option value="" selected disabled hidden>Choose here</option>
+                                        <option>Mumbai Indians</option>
+                                        <option>Kings XI Punjab</option>
+                                        <option>Chennai Super Kings</option>
+                                        <option>Royal Challengers Bangalore</option>
+                                        <option>Kolkata Knight Riders</option>
+                                        <option>Delhi Daredevils</option>
+                                        <option>Rajasthan Royals</option>
+                                        <option>Sunrisers Hyderabad</option>
+                                        <option>Deccan Chargers</option>
+                                        <option>Pune Warriors</option>
+                                        <option>Gujarat Lions</option>
+                                        <option>Rising Pune Supergiant</option>
+                                        <option>Kochi Tuskers Kerala</option>
+                                        <option>Rising Pune Supergiants</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="exampleFormControlSelect1" class="col-sm-4 col-form-label"><b>Toss winner</b></label>
+                                <div class="col-sm-8">
+                                    <select class="form-control" id="exampleFormControlSelect1" name="Toss_winner" required="required">
+                                        <option value="" selected disabled hidden>Choose here</option>
+                                        <option>Kings XI Punjab</option>
+                                        <option>Chennai Super Kings</option>
+                                        <option>Royal Challengers Bangalore</option>
+                                        <option>Kolkata Knight Riders</option>
+                                        <option>Delhi Daredevils</option>
+                                        <option>Rajasthan Royals</option>
+                                        <option>Sunrisers Hyderabad</option>
+                                        <option>Deccan Chargers</option>
+                                        <option>Pune Warriors</option>
+                                        <option>Gujarat Lions</option>
+                                        <option>Rising Pune Supergiant</option>
+                                        <option>Kochi Tuskers Kerala</option>
+                                        <option>Rising Pune Supergiants</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="exampleFormControlSelect1" class="col-sm-4 col-form-label"><b>Toss Decision</b></label>
+                                <div class="col-sm-8">
+                                    <select class="form-control" id="exampleFormControlSelect1" name="Toss_decision" required="required">
+                                        <option value="" selected disabled hidden>Choose here</option>
+                                        <option>Field</option>
+                                        <option>Bat</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="exampleFormControlSelect1" class="col-sm-4 col-form-label"><b>Result</b></label>
+                                <div class="col-sm-8">
+                                    <select class="form-control" id="exampleFormControlSelect1" name="Result" required="required">
+                                        <option value="" selected disabled hidden>Choose here</option>
+                                        <option>Normal</option>
+                                        <option>Tie</option>
+                                        <option>No result</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="exampleFormControlSelect1" class="col-sm-4 col-form-label"><b>DL Method Applied</b></label>
+                                <div class="col-sm-8">
+                                    <select class="form-control" id="exampleFormControlSelect1" name="DL_applied" required="required">
+                                        <option value="" selected disabled hidden>Choose here</option>
+                                        <option>Yes</option>
+                                        <option>No</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="exampleFormControlSelect1" class="col-sm-4 col-form-label"><b>Win by runs</b></label>
+                                <div class="col-sm-8">
+                                    <input type="number" id="quantity" name="Win_by_runs" min="0" max="146" value="Type here" required="required">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="exampleFormControlSelect1" class="col-sm-4 col-form-label"><b>Win by wickets</b></label>
+                                <div class="col-sm-8">
+                                    <input type="number" id="quantity" name="Win_by_wickets" min="0" max="10" value="Type here" required="required">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="exampleFormControlSelect1" class="col-sm-4 col-form-label"><b>Venue</b></label>
+                                <div class="col-sm-8">
+                                    <select class="form-control" id="exampleFormControlSelect1" name="Venue" required="required">
+                                        <option value="" selected disabled hidden>Choose here</option>
+                                        <option>M Chinnaswamy Stadium</option>
+                                        <option>Eden Gardens</option>
+                                        <option>Feroz Shah Kotla</option>
+                                        <option>Wankhede Stadium</option>
+                                        <option>Rajiv Gandhi International Stadium, Uppal</option>
+                                        <option>MA Chidambaram Stadium, Chepauk</option>
+                                        <option>Punjab Cricket Association Stadium, Mohali</option>
+                                        <option>Sawai Mansingh Stadium</option>
+                                        <option>Subrata Roy Sahara Stadium</option>
+                                        <option>Dr DY Patil Sports Academy</option>
+                                        <option>Maharashtra Cricket Association Stadium</option>
+                                        <option>Kingsmead</option>
+                                        <option>Sardar Patel Stadium, Motera</option>
+                                        <option>SuperSport Park</option>
+                                        <option>Dr. Y.S. Rajasekhara Reddy ACA-VDCA Cricket Stadium</option>
+                                        <option>Punjab Cricket Association IS Bindra Stadium, Mohali</option>
+                                        <option>Brabourne Stadium</option>
+                                        <option>Saurashtra Cricket Association Stadium</option>
+                                        <option>Himachal Pradesh Cricket Association Stadium</option>
+                                        <option>New Wanderers Stadium</option>
+                                        <option>JSCA International Stadium Complex</option>
+                                        <option>Newlands</option>
+                                        <option>Dubai International Cricket Stadium</option>
+                                        <option>St George's Park</option>
+                                        <option>Barabati Stadium</option>
+                                        <option>Sheikh Zayed Stadium</option>
+                                        <option>Sharjah Cricket Stadium</option>
+                                        <option>Shaheed Veer Narayan Singh International Stadium</option>
+                                        <option>Holkar Cricket Stadium</option>
+                                        <option>Nehru Stadium</option>
+                                        <option>Green Park</option>
+                                        <option>Vidarbha Cricket Association Stadium, Jamtha</option>
+                                        <option>Buffalo Park</option>
+                                        <option>De Beers Diamond Oval</option>
+                                        <option>OUTsurance Oval</option>
+                                    </select>
+                                </div>
+
+                            </div>
+                            <div class="pb-2 text-center">
+                                <button type="submit" class="btn btn-dark w-50 font-weight-bold mt-2">Submit</button>
+                            </div>
+
+                        </form>
+                        <div style='font-size: large; font-family: Lucida Console, Courier New, monospace; '>
+                          <p style="color: black; background-color: Ivory; opacity: 0.7">{{ prediction_text }}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 d-none d-md-block global-container", style="background-image: url('static/ipl1.jpg');
+                border-style: outset; border-width: 1.5px 1.5px; border-color: red green blue yellow;" >
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    </body>
+</html>
